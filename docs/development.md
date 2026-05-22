@@ -36,7 +36,8 @@ docs/                     architecture, API, providers, and Codex integration no
 
 ## Testing
 
-The test suite uses Node's built-in test runner (`node --test test/`).
+The test suite uses Node's built-in test runner (`node --test`, which discovers
+`test/*.test.mjs` automatically).
 
 - **`test/proxy.test.mjs`** — Ollama request/response translation, Responses API
   payload conversion and SSE serialization, and a full gateway round-trip

@@ -32,7 +32,7 @@
   },
   "scripts": {
     "start": "node proxy.mjs",
-    "test": "node --test test/",
+    "test": "node --test",
     "test:codex": "node scripts/codex-e2e.mjs"
   },
   "engines": {
