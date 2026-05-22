@@ -1,0 +1,45 @@
+{
+  "name": "free-openai-codex",
+  "version": "0.1.0",
+  "description": "Local OpenAI-compatible gateway that routes Codex CLI/Desktop model names to free and OpenAI-compatible providers (Ollama Cloud, Hugging Face Inference Router, NVIDIA NIM, Modal, with optional DeepSeek, Moonshot/Kimi, Z.AI/GLM, OpenAI, and local Ollama). Educational project.",
+  "private": true,
+  "type": "module",
+  "keywords": [
+    "codex",
+    "codex-cli",
+    "codex-desktop",
+    "openai",
+    "openai-compatible",
+    "gateway",
+    "proxy",
+    "responses-api",
+    "chat-completions",
+    "ollama",
+    "ollama-cloud",
+    "huggingface",
+    "hf-router",
+    "nvidia",
+    "nvidia-nim",
+    "modal",
+    "deepseek",
+    "kimi",
+    "moonshot",
+    "glm",
+    "zai"
+  ],
+  "bin": {
+    "free-openai-codex": "./proxy.mjs"
+  },
+  "scripts": {
+    "start": "node proxy.mjs",
+    "test": "node --test test/",
+    "test:codex": "node scripts/codex-e2e.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "yaml": "^2.6.1"
+  }
+}

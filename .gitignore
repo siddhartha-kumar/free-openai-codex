@@ -1,0 +1,41 @@
+# Dependencies
+node_modules/
+
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.local
+
+# Runtime files (written by start.sh)
+*.pid
+*.log
+logs/
+npm-debug.log*
+
+# Codex e2e scratch directories (scripts/codex-e2e.mjs)
+.codex-e2e-*/
+.codex-live*/
+
+# Test and coverage outputs
+coverage/
+.nyc_output/
+.coverage
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Temporary files
+tmp/
+temp/
+.cache/
+
+# Claude Code local state
+.claude/
