@@ -1,0 +1,40 @@
+name: CI
+
+on:
+  push:
+    branches: [main, dev]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+
+      - name: Install
+        run: npm ci
+
+      - name: Check JSON
+        run: |
+          node -e "const fs=require('fs'); for (const f of ['package.json']) JSON.parse(fs.readFileSync(f,'utf8'))"
+
+      - name: Check shell scripts
+        run: |
+          sh -n start.sh
+          sh -n scripts/ensure-node.sh
+
+      - name: Check JavaScript
+        run: |
+          node --check proxy.mjs
+          node --check scripts/codex-e2e.mjs
+
+      - name: Run tests
+        run: npm test
